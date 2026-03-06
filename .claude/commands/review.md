@@ -1,4 +1,4 @@
-Review recent changes against project docs. Do the following:
+(myspec) Review recent changes against project docs. Do the following:
 
 1. Run `git diff` and `git status` to see what's changed
 2. Re-read docs/ARCHITECTURE.md, docs/ROADMAP.md, and any relevant docs/design/ files

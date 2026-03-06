@@ -1,4 +1,4 @@
-I'm about to work on something and want to establish scope. The work: $ARGUMENTS
+(myspec) I'm about to work on something and want to establish scope. The work: $ARGUMENTS
 
 1. Read docs/ARCHITECTURE.md, docs/ROADMAP.md, and relevant docs/design/ files
 2. Identify which files and modules are in scope for this work

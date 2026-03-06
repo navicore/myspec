@@ -37,6 +37,9 @@ Copy `.claude/commands/` into any project. These are re-grounding commands — t
 | `/review` | Reviews uncommitted changes against project docs. |
 | `/sync-docs` | Updates docs to match current code reality. |
 | `/scope <work>` | Establishes what's in and out of scope for a task. |
+| `/bootstrap` | Examines the codebase and creates initial ARCHITECTURE.md and ROADMAP.md. |
+
+Commands are tagged `(myspec)` in their descriptions to avoid confusion with built-in commands. Pick names that don't collide with built-ins — e.g., `bootstrap` instead of `init`.
 
 ## Workflow
 

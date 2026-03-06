@@ -1,4 +1,4 @@
-Re-read all docs in docs/ (ARCHITECTURE.md, ROADMAP.md, and everything in docs/design/) and then examine the current codebase. Report:
+(myspec) Re-read all docs in docs/ (ARCHITECTURE.md, ROADMAP.md, and everything in docs/design/) and then examine the current codebase. Report:
 
 1. **Drift**: anything in the code that contradicts or has moved beyond what the docs describe
 2. **Gaps**: anything the docs promise or specify that isn't implemented yet

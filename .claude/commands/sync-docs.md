@@ -1,4 +1,4 @@
-The code has changed and docs may be stale. Update project docs to reflect current reality.
+(myspec) The code has changed and docs may be stale. Update project docs to reflect current reality.
 
 1. Read all docs in docs/ to understand what they currently say
 2. Examine the codebase to understand what actually exists

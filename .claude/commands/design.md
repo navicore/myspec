@@ -1,4 +1,4 @@
-I want to think through a change before coding it. The change: $ARGUMENTS
+(myspec) I want to think through a change before coding it. The change: $ARGUMENTS
 
 1. Read docs/ARCHITECTURE.md and docs/ROADMAP.md to understand current project state and direction
 2. Read any existing design docs in docs/design/ that are related
