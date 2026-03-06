@@ -1,9 +1,10 @@
-(myspec) Re-read all docs in docs/ (ARCHITECTURE.md, ROADMAP.md, and everything in docs/design/) and then examine the current codebase. Report:
+(myspec) Compare code against docs. Report drift, gaps, and staleness.
 
-1. **Drift**: anything in the code that contradicts or has moved beyond what the docs describe
-2. **Gaps**: anything the docs promise or specify that isn't implemented yet
-3. **Staleness**: any doc content that describes things that no longer exist or work differently
+If $ARGUMENTS is provided, focus on: $ARGUMENTS
 
-Be specific — cite file paths and doc sections. Don't suggest rewrites, just report the state.
-
-If $ARGUMENTS is provided, focus the check on that area: $ARGUMENTS
+1. Re-read all docs in docs/ and examine the current codebase
+2. Report:
+   - **Drift**: code that contradicts or has moved beyond what docs describe
+   - **Gaps**: things docs promise that aren't implemented
+   - **Staleness**: doc content describing things that no longer exist
+3. Be specific — cite file paths and doc sections. Don't suggest rewrites, just report.
