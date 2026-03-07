@@ -78,4 +78,6 @@ The pattern is: **copy docs that worked from successful projects, not specs gene
 
 Those tools generate directory structures and enforce phase gates. Under the hood they're just prompt templates in `.claude/commands/` — the same mechanism used here, wrapped in a CLI and an npm package. They don't solve the drift problem because they focus on generating specs, not on continuously re-checking code against specs.
 
-There's no special model-provider magic behind these tools. AI coding tools maintain a context window that includes your instructions, tool definitions, and conversation history. Everything — CLAUDE.md, docs, slash commands — is plain text fed into that context. A file called `openspec/changes/dark-mode/proposal.md` has zero advantage over `docs/design/dark-mode.md`.
+As of now, there's no special model-provider magic behind these tools. AI coding tools maintain a context window that includes your instructions, tool definitions, and conversation history. Everything — CLAUDE.md, docs, slash commands — is plain text fed into that context. A file called `openspec/changes/dark-mode/proposal.md` has zero advantage over `docs/design/dark-mode.md`.
+
+That said — if model providers start using post-training to make models treat certain file conventions with higher weight or special semantics, that changes the calculus. If a model is fine-tuned to attend differently to `openspec/proposal.md` than to `docs/design/proposal.md`, the content stops being equal regardless of where it lives. Worth watching. For now, plain text is plain text.
