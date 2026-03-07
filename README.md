@@ -4,9 +4,13 @@ Lightweight project spec conventions for working with AI coding tools. No framew
 
 For Claude Code, install is something like:
 
+My own zsh alias is:
+
+```zsh
+which myspec
+myspec: aliased to  mkdir -p .claude/commands && cp -R ~/git/navicore/myspec/.claude/commands/* .claude/commands/
 ```
-mkdir -p .claude/commands && cp -R ~/myspec/.claude/commands/* .claude/commands/
-```
+
 
 ## The idea
 
