@@ -60,14 +60,19 @@ There is no rigid workflow. Use what helps:
 
 - Need to think through a change? `/design add widget support` — writes a design doc
 - Starting a session on existing work? `/scope add widget support` — loads context and draws boundaries
-- Mid-session context feeling stale? `/check`
+- Mid-session context feeling stale? `/check` — reports what's drifted
 - About to wrap up? `/review`
-- Docs fallen behind? `/sync-docs`
+- Docs fallen behind? `/sync-docs` — fixes the docs to match reality
 
 `/design` and `/scope` serve different moments. `/design` is for planning — use
 it when you haven't thought a change through yet. `/scope` is for focusing — use
 it when you know what you're doing and just need the relevant docs loaded. If
 you wrote a design doc last session, `/scope` will pick it up.
+
+`/check` and `/sync-docs` are also a pair. `/check` is read-only — it tells you
+what's drifted without changing anything. `/sync-docs` acts — it updates the
+docs to match the code. Use `/check` first to see the state, then `/sync-docs`
+if the docs are what's stale (not the code).
 
 ## Influences
 
