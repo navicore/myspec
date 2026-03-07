@@ -37,10 +37,10 @@ Copy `.claude/commands/` into any project. These are re-grounding commands — t
 | Command | What it does |
 |---------|-------------|
 | `/check` | Compares code against docs. Reports drift, gaps, and staleness. |
-| `/design <change>` | Writes a short design doc before coding starts. |
+| `/design <change>` | Plans a change — writes a design doc to `docs/design/` before coding starts. |
+| `/scope <work>` | Focuses a session — loads relevant docs and draws boundaries for what's in and out of scope. |
 | `/review` | Reviews uncommitted changes against project docs. |
 | `/sync-docs` | Updates docs to match current code reality. |
-| `/scope <work>` | Establishes what's in and out of scope for a task. |
 | `/bootstrap` | Examines the codebase and creates initial ARCHITECTURE.md and ROADMAP.md. |
 
 Commands are tagged `(myspec)` in their descriptions to avoid confusion with built-in commands. Pick names that don't collide with built-ins — e.g., `bootstrap` instead of `init`.
@@ -49,10 +49,13 @@ Commands are tagged `(myspec)` in their descriptions to avoid confusion with bui
 
 There is no rigid workflow. Use what helps:
 
-- Starting a feature? `/design add widget support` then `/scope add widget support`
+- Need to think through a change? `/design add widget support` — writes a design doc
+- Starting a session on existing work? `/scope add widget support` — loads context and draws boundaries
 - Mid-session context feeling stale? `/check`
 - About to wrap up? `/review`
 - Docs fallen behind? `/sync-docs`
+
+`/design` and `/scope` serve different moments. `/design` is for planning — use it when you haven't thought a change through yet. `/scope` is for focusing — use it when you know what you're doing and just need the relevant docs loaded. If you wrote a design doc last session, `/scope` will pick it up.
 
 ## Influences
 
