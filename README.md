@@ -2,13 +2,12 @@
 
 Lightweight project spec conventions for working with AI coding tools. No framework, no CLI, no npm install — just docs and slash commands.
 
+The commands are packaged for Claude Code's `.claude/commands/` convention, but the approach is portable. The commands are just prompt templates — short markdown files that tell the model what to do. Any agent that supports custom instructions or slash commands can use the same prompts.
+
 For Claude Code, install is something like:
 
-My own zsh alias is:
-
 ```zsh
-which myspec
-myspec: aliased to  mkdir -p .claude/commands && cp -R ~/git/navicore/myspec/.claude/commands/* .claude/commands/
+mkdir -p .claude/commands && cp -R ~/git/navicore/myspec/.claude/commands/* .claude/commands/
 ```
 
 
