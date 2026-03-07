@@ -50,6 +50,15 @@ There is no rigid workflow. Use what helps:
 - About to wrap up? `/review`
 - Docs fallen behind? `/sync-docs`
 
+## Influences
+
+The `/bootstrap` command coaches architecture docs toward a structure drawn from [arc42](https://arc42.org) and [Domain-Driven Design](https://www.domainlanguage.com/ddd/):
+
+- **arc42** — Context & Scope, Solution Strategy, Building Blocks, and Crosscutting Concepts provide a proven skeleton for architecture docs without the ceremony of a full 12-section template.
+- **DDD** — use the project's domain language everywhere (ubiquitous language), draw clear system boundaries (bounded contexts), and document what owns what and what must stay consistent (entities and invariants).
+
+These aren't enforced as methodology — they're just good defaults for the kind of architecture doc that keeps an AI coding tool grounded.
+
 ## Your docs are the spec
 
 You don't need a tool to generate specs. If you already have `docs/ARCHITECTURE.md`, `docs/ROADMAP.md`, a `docs/TESTING.md`, design docs — that's the spec. It's project knowledge you've built up from real experience, not something an AI should reinvent from a template each time.
