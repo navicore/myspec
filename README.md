@@ -1,19 +1,26 @@
 # myspec
 
-Lightweight project spec conventions for working with AI coding tools. No framework, no CLI, no npm install — just docs and slash commands.
+Lightweight project spec conventions for working with AI coding tools. No
+framework, no CLI, no npm install — just docs and slash commands.
 
-The commands are packaged for Claude Code's `.claude/commands/` convention, but the approach is portable. The commands are just prompt templates — short markdown files that tell the model what to do. Any agent that supports custom instructions or slash commands can use the same prompts.
+The commands are packaged for Claude Code's `.claude/commands/` convention, but
+the approach is portable. The commands are just prompt templates — short
+markdown files that tell the model what to do. Any agent that supports custom
+instructions or slash commands can use the same prompts.
 
-For Claude Code, install is something like:
+My own zsh alias is:
 
 ```zsh
-mkdir -p .claude/commands && cp -R ~/git/navicore/myspec/.claude/commands/* .claude/commands/
+which myspec
+myspec: aliased to  mkdir -p .claude/commands && cp -R ~/git/navicore/myspec/.claude/commands/* .claude/commands/
 ```
 
 
 ## The idea
 
-The problem with AI coding sessions isn't generating specs — it's **drift**. The model loses context, docs go stale, code diverges from intent. The fix is making it easy to pull your docs back into context and compare against reality.
+The problem with AI coding sessions isn't generating specs — it's **drift**. The
+model loses context, docs go stale, code diverges from intent. The fix is making
+it easy to pull your docs back into context and compare against reality.
 
 ## Structure
 
@@ -31,7 +38,8 @@ your-project/
 
 ## Commands
 
-Copy `.claude/commands/` into any project. These are re-grounding commands — they pull docs back into context and compare against the codebase.
+Copy `.claude/commands/` into any project. These are re-grounding commands —
+they pull docs back into context and compare against the codebase.
 
 | Command | What it does |
 |---------|-------------|
@@ -42,7 +50,9 @@ Copy `.claude/commands/` into any project. These are re-grounding commands — t
 | `/sync-docs` | Updates docs to match current code reality. |
 | `/bootstrap` | Examines the codebase and creates initial ARCHITECTURE.md and ROADMAP.md. |
 
-Commands are tagged `(myspec)` in their descriptions to avoid confusion with built-in commands. Pick names that don't collide with built-ins — e.g., `bootstrap` instead of `init`.
+Commands are tagged `(myspec)` in their descriptions to avoid confusion with
+built-in commands. Pick names that don't collide with built-ins — e.g.,
+`bootstrap` instead of `init`.
 
 ## Workflow
 
@@ -54,29 +64,60 @@ There is no rigid workflow. Use what helps:
 - About to wrap up? `/review`
 - Docs fallen behind? `/sync-docs`
 
-`/design` and `/scope` serve different moments. `/design` is for planning — use it when you haven't thought a change through yet. `/scope` is for focusing — use it when you know what you're doing and just need the relevant docs loaded. If you wrote a design doc last session, `/scope` will pick it up.
+`/design` and `/scope` serve different moments. `/design` is for planning — use
+it when you haven't thought a change through yet. `/scope` is for focusing — use
+it when you know what you're doing and just need the relevant docs loaded. If
+you wrote a design doc last session, `/scope` will pick it up.
 
 ## Influences
 
-The `/bootstrap` command coaches architecture docs toward a structure drawn from [arc42](https://arc42.org) and [Domain-Driven Design](https://www.domainlanguage.com/ddd/):
+The `/bootstrap` command coaches architecture docs toward a structure drawn from
+[arc42](https://arc42.org) and [Domain-Driven
+Design](https://www.domainlanguage.com/ddd/):
 
-- **arc42** — Context & Scope, Solution Strategy, Building Blocks, and Crosscutting Concepts provide a proven skeleton for architecture docs without the ceremony of a full 12-section template.
-- **DDD** — use the project's domain language everywhere (ubiquitous language), draw clear system boundaries (bounded contexts), and document what owns what and what must stay consistent (entities and invariants).
+- **arc42** — Context & Scope, Solution Strategy, Building Blocks, and
+  Crosscutting Concepts provide a proven skeleton for architecture docs without
+  the ceremony of a full 12-section template.
+- **DDD** — use the project's domain language everywhere (ubiquitous language),
+  draw clear system boundaries (bounded contexts), and document what owns what
+  and what must stay consistent (entities and invariants).
 
-These aren't enforced as methodology — they're just good defaults for the kind of architecture doc that keeps an AI coding tool grounded.
+These aren't enforced as methodology — they're just good defaults for the kind
+of architecture doc that keeps an AI coding tool grounded.
 
 ## Your docs are the spec
 
-You don't need a tool to generate specs. If you already have `docs/ARCHITECTURE.md`, `docs/ROADMAP.md`, a `docs/TESTING.md`, design docs — that's the spec. It's project knowledge you've built up from real experience, not something an AI should reinvent from a template each time.
+You don't need a tool to generate specs. If you already have
+`docs/ARCHITECTURE.md`, `docs/ROADMAP.md`, a `docs/TESTING.md`, design docs —
+that's the spec. It's project knowledge you've built up from real experience,
+not something an AI should reinvent from a template each time.
 
-The commands pick up whatever is in `docs/`. Add a testing guide, an observability guide, ADRs — whatever you've found works. The commands will include it when checking, reviewing, and scoping.
+The commands pick up whatever is in `docs/`. Add a testing guide, an
+observability guide, ADRs — whatever you've found works. The commands will
+include it when checking, reviewing, and scoping.
 
-The pattern is: **copy docs that worked from successful projects, not specs generated by tools.**
+The pattern is: **copy docs that worked from successful projects, not specs
+generated by tools.**
 
 ## Why not speckit/openspec?
 
-Those tools generate directory structures and enforce phase gates. Under the hood they're just prompt templates in `.claude/commands/` — the same mechanism used here, wrapped in a CLI and an npm package. They don't solve the drift problem because they focus on generating specs, not on continuously re-checking code against specs.
+Those tools generate directory structures and enforce phase gates. Under the
+hood they're just prompt templates in `.claude/commands/` — the same mechanism
+used here, wrapped in a CLI and an npm package. They don't solve the drift
+problem because they focus on generating specs, not on continuously re-checking
+code against specs.
 
-As of now, there's no special model-provider magic behind these tools. AI coding tools maintain a context window that includes your instructions, tool definitions, and conversation history. Everything — CLAUDE.md, docs, slash commands — is plain text fed into that context. A file called `openspec/changes/dark-mode/proposal.md` has zero advantage over `docs/design/dark-mode.md`.
+As of now, there's no special model-provider magic behind these tools. AI coding
+tools maintain a context window that includes your instructions, tool
+definitions, and conversation history. Everything — CLAUDE.md, docs, slash
+commands — is plain text fed into that context. A file called
+`openspec/changes/dark-mode/proposal.md` has zero advantage over
+`docs/design/dark-mode.md`.
 
-That said — if model providers start using post-training to make models treat certain file conventions with higher weight or special semantics, that changes the calculus. If a model is fine-tuned to attend differently to `openspec/proposal.md` than to `docs/design/proposal.md`, the content stops being equal regardless of where it lives. Worth watching. For now, plain text is plain text.
+That said — if model providers start using post-training to make models treat
+certain file conventions with higher weight or special semantics, that changes
+the calculus. If a model is fine-tuned to attend differently to
+`openspec/proposal.md` than to `docs/design/proposal.md`, the content stops
+being equal regardless of where it lives. Worth watching. For now, plain text is
+plain text.
+
