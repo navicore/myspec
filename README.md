@@ -8,6 +8,8 @@ the approach is portable. The commands are just prompt templates — short
 markdown files that tell the model what to do. Any agent that supports custom
 instructions or slash commands can use the same prompts.
 
+### Claude Code Install
+
 My own zsh alias is:
 
 ```zsh
@@ -15,6 +17,23 @@ which myspec
 myspec: aliased to  mkdir -p .claude/commands && cp -R ~/git/navicore/myspec/.claude/commands/* .claude/commands/
 ```
 
+### VS Code Copilot Chat Install
+
+Amazingly copilot-cli doesn't support an user slash commands but VS Code sort of
+does as of 3/2026.
+
+VS Code Copilot Chat supports reusable prompt files via `.github/prompts/`. Copy
+the commands there as `.prompt.md` files and they'll appear in the prompt picker
+(or attach them with `#` in chat):
+
+```zsh
+mkdir -p .github/prompts
+for f in ~/git/navicore/myspec/.claude/commands/*.md; do
+  cp "$f" ".github/prompts/$(basename "${f%.md}").prompt.md"
+done
+```
+
+Invocation isn't a slash command — you select from the picker or type `#check.prompt` — but it's still explicit and on-demand, not ambient. Copilot CLI doesn't yet have an equivalent directory convention.
 
 ## The idea
 
