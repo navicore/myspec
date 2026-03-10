@@ -3,7 +3,8 @@
 1. Read all docs in docs/ to understand what they currently say
 2. Examine the codebase to understand what actually exists
 3. Update docs that are out of date — only change what's wrong, don't rewrite for style
-4. If a design doc in docs/design/ has been fully implemented and is now just describing what the code does, note it but leave it alone — it serves as a decision record
+4. Design docs in docs/design/ may describe intent that hasn't been implemented yet — the team edits these directly and they can run ahead of the code. When a design doc says something the code doesn't do yet, treat the design doc as intent, not staleness. Don't remove or weaken design doc content to match current code.
+5. If a design doc has been fully implemented and is now just describing what the code does, note it but leave it alone — it serves as a decision record
 
 Focus on accuracy. Don't add new docs, don't expand scope, don't add sections that weren't there.
 

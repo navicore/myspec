@@ -6,6 +6,7 @@
    - Follow the architectural patterns described in docs
    - Stay within scope of the relevant design doc (if one exists)
    - Introduce anything that should be reflected back into the docs
+   - Diverge from design doc intent — design docs may have been updated by the team ahead of the code, so when the code doesn't match, flag it without assuming which side is wrong
 
 Report findings. Don't make changes — just tell me what you see.
 

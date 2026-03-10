@@ -156,7 +156,7 @@ coding, not a contract to code against.
 
 The value isn't correct docs for their own sake — it's that the model makes
 better software when it's grounded against what the team actually knows right
-now. If your docs are always right, you're probably not learning fast enough.
+now.
 
 ## Why not speckit/openspec?
 
