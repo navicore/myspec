@@ -147,13 +147,16 @@ version that misses the point. "Self-organizing" literally means self-organizing
 work. That's rare. What's common is standups, sprints, and story points bolted
 onto a plan that was locked before the first line of code.
 
-myspec can't make your team iterative or self-organizing. What it can do is keep
-your docs honest as understanding evolves. `/check` tells you when the code has
-outgrown the docs. `/sync-docs` catches the docs up. `/design` gives you a place
-to think before coding, not a contract to code against. The docs are living
-artifacts of what you've learned, not a specification to be executed.
+myspec can't make your team iterative or self-organizing. What it can do is
+close the loop between what the team has learned and what the model acts on.
+When docs drift from reality, the model generates code against stale intent —
+wrong boundaries, missed constraints, orphaned abstractions. `/check` surfaces
+that drift. `/sync-docs` fixes it. `/design` gives you a place to think before
+coding, not a contract to code against.
 
-If your docs are always right, you're probably not learning fast enough.
+The value isn't correct docs for their own sake — it's that the model makes
+better software when it's grounded against what the team actually knows right
+now. If your docs are always right, you're probably not learning fast enough.
 
 ## Why not speckit/openspec?
 
