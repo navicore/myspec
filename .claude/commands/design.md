@@ -6,6 +6,7 @@
    - **Intent**: what and why (not how)
    - **Constraints**: what must not break, what's out of scope
    - **Approach**: brief technical direction
+   - **Domain Events**: what events does this change produce or consume — what happens, and what must follow
    - **Checkpoints**: how to verify it worked
 
 Keep it short. One page max. This is a working doc, not a deliverable.
