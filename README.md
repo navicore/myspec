@@ -35,6 +35,22 @@ done
 
 Invocation isn't a slash command — you select from the picker or type `#check.prompt` — but it's still explicit and on-demand, not ambient. Copilot CLI doesn't yet have an equivalent directory convention.
 
+### GitHub Actions
+
+Example workflows are in `examples/github/workflows/`. These use
+[claude-code-action](https://github.com/anthropics/claude-code-action) to run
+Claude Code on pull requests and `@claude` mentions.
+
+The PR review workflow includes a lightweight myspec hint: if `docs/ARCHITECTURE.md`
+or `docs/design/` files exist, it checks whether the PR is consistent with them.
+This is deliberately minimal — Claude Code GitHub Actions break down with
+multi-step prompts, so the docs-awareness is two sentences, not an orchestration
+plan. The `@claude` mention workflow has no custom prompt at all and relies on
+CLAUDE.md for project context.
+
+Copy the examples to `.github/workflows/` and add a `CLAUDE_CODE_OAUTH_TOKEN`
+secret to your repo.
+
 ## The idea
 
 The problem with AI coding sessions isn't generating specs — it's **drift**. The
