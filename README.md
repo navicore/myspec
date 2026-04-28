@@ -1,3 +1,8 @@
+<!-- ghmig:moved -->
+> **This repository has moved to [https://git.navicore.tech/navicore/myspec](https://git.navicore.tech/navicore/myspec).**
+>
+> The GitHub copy is archived and no longer maintained.
+
 # myspec
 
 Lightweight project spec conventions for working with AI coding tools. No
@@ -191,4 +196,3 @@ when it matters.
 That said — if model providers start using post-training to make models treat
 certain file conventions with higher weight or special semantics, that changes
 the calculus. Worth watching. For now, plain text is plain text.
-
